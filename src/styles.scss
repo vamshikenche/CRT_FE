@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+body,
+html {
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    font-family: 'Open Sans', sans-serif !important;
+}
+
+.sectionTabs .mat-tab-label {
+    width: 25%;
+}
+
+.sectionTabs .mat-tab-body-wrapper {
+    height: 100%;
+}

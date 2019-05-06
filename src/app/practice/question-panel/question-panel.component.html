@@ -1,0 +1,10 @@
+<div fxLayout="column">
+    <div fxFlex="10" fxLayoutAlign="center center" style="padding:5px;background-color: lightgray;">
+        Question Panel
+    </div>
+    <div fxFlex="90" style="display:inline-flex;">
+        <div *ngFor="let question of questionPanelArr; let questionIndex = index;" style="width:30px;height:30px;background-color: #efeaea;margin:5px;cursor: pointer;display: flex;place-content: center;align-items: center;">
+            <span>{{questionIndex+1}}</span>
+        </div>
+    </div>
+</div>

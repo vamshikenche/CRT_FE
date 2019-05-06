@@ -1,0 +1,63 @@
+<div fxLayout="column" fxFlexFill>
+    <div fxFlex="7" fxLayout="row" fxLayoutAlign="center center" style="background-color: #d8abab;color:white;font-weight: bold;padding: 5px;">
+        <div fxFlex="100">
+            Company Test
+        </div>
+    </div>
+    <div fxFlex="93" fxLayout="row">
+        <div fxFlex="80" fxLayout="column">
+            <div fxFlex="100" fxLayout="row" fxLayoutAlign="start start" fxFill>
+                <mat-tab-group animationDuration="100ms" fxFill style="width:100%;" class="sectionTabs">
+                    <mat-tab label="Quantitative" fxFill>
+                        <div fxLayout="column" fxFill>
+                            <div fxFlex="90">
+                                <app-question-type [currentQuestionObj]="currentQuestion"></app-question-type>
+                            </div>
+                            <div fxFlex="10" fxLayout="row">
+                                <div fxFlex="33" fxLayoutAlign="center center">
+                                    <button mat-raised-button>Clear Response</button>
+                                </div>
+                                <div fxFlex="33" fxLayoutAlign="center center">
+                                    <button mat-raised-button>Mark for Review</button>
+                                </div>
+                                <div fxFlex="33" fxLayoutAlign="center center">
+                                    <button mat-raised-button color="primary" (click)="saveAndRenderQuestion();"><span style="font-weight: bold;"> 
+                                            Save and Next
+                                    </span></button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </mat-tab>
+                    <mat-tab label="Reasoning">
+                        <app-question-type></app-question-type>
+                    </mat-tab>
+                    <mat-tab label="Verbal">
+                        <app-question-type></app-question-type>
+                    </mat-tab>
+                    <mat-tab label="Programming">
+                        <app-question-type></app-question-type>
+                    </mat-tab>
+                </mat-tab-group>
+            </div>
+        </div>
+        <div fxFlex="20" fxLayout="column" style="border-left:1px solid lightgray;">
+            <div fxFlex="30">
+                <div fxLayout="column">
+                    <div fxFlex="10" fxLayoutAlign="center center" style="padding:5px;background-color: lightgray;">
+                        Guidelines
+                    </div>
+                    <div fxFlex="90" fxFill style="background-color: #efeaea;">
+                    </div>
+                </div>
+            </div>
+            <div fxFlex="60">
+                <app-question-panel [questionPanelInfo]="questionPanelObj"></app-question-panel>
+            </div>
+
+            <div fxFlex="10" fxLayoutAlign="center center">
+                <button mat-raised-button>Submit Test</button>
+            </div>
+        </div>
+    </div>
+</div>

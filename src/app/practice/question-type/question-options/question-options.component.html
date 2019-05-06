@@ -1,0 +1,11 @@
+<section>
+    <div fxLayout="column">
+        <div fxFlex="10">
+            <mat-radio-group class="example-radio-group" fxLayout="column" [(ngModel)]="selectedOption" (change)="saveQuestionResponse($event)">
+                <mat-radio-button class="example-radio-button" *ngFor="let opt of options" [value]="opt" style="margin:5px;">
+                    {{opt.optionText}}
+                </mat-radio-button>
+            </mat-radio-group>
+        </div>
+    </div>
+</section>
