@@ -9,16 +9,13 @@ import { PracticeSectionComponent } from './practice/practice-section/practice-s
 import { QuestionTypeComponent } from './practice/question-type/question-type.component';
 import { QuestionMcqComponent } from './practice/question-type/question-mcq/question-mcq.component';
 import { QuestionOptionsComponent } from './practice/question-type/question-options/question-options.component';
-import { MatCheckboxModule } from '@angular/material/checkbox';
-import { MatTabsModule } from '@angular/material/tabs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule } from '@angular/material/button';
 import { SafeHtmlPipe } from './safe-html.pipe';
-import { MatRadioModule } from '@angular/material/radio';
 import { QuestionDiBargraphComponent } from './practice/question-type/question-di-bargraph/question-di-bargraph.component';
 import { FormsModule } from '@angular/forms'; 
 import { ReactiveFormsModule } from '@angular/forms';
 import { QuestionPanelComponent } from './practice/question-panel/question-panel.component';
+import { MaterialModule } from './material/material.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,12 +31,9 @@ import { QuestionPanelComponent } from './practice/question-panel/question-panel
   imports: [
     BrowserModule,
     AppRoutingModule,
+    MaterialModule,
     FlexLayoutModule,
-    MatCheckboxModule,
-    MatTabsModule,
     BrowserAnimationsModule,
-    MatButtonModule,
-    MatRadioModule,
     FormsModule,
     ReactiveFormsModule
   ],
