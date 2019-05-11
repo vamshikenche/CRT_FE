@@ -18,6 +18,15 @@ export class PracticeSectionComponent implements OnInit {
   currentQuestion:any = {};
   currentQuestionIndex = 0;
   totalQuestionsCount = 0;
+
+  public show = true;
+  public mainContent = "80"
+
+  toggle() {
+    this.show = !this.show;
+    this.show? this.mainContent = "78" : this.mainContent = "100";
+  } 
+
   ngOnInit() {
     this.questionArr = this.practiceService.getExamSectionData();
     this.questionPanelObj = this.practiceService.getQuestionPanelReportByUserExam();

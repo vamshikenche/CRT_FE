@@ -12,7 +12,7 @@ export const MCQ = [
     "options": [
         {
             "optionId": "1",
-            "optionText": "2.Nephew",
+            "optionText": "Nephew",
         }, {
             "optionId": "2",
             "optionText": "Niece",
