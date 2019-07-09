@@ -1,14 +1,11 @@
-<div fxLayout="column">
-    
-        <mat-toolbar fxFlex="10" fxLayoutAlign="center center" color="primary">
-                Question Panel
-        </mat-toolbar>
-    <div fxFlex="auto" style="display:inline-flex;">
-        <div *ngFor="let question of questionPanelArr; let questionIndex = index;"
-            style="width:30px;height:30px;background-color: #efeaea;margin:5px;cursor: pointer;display: flex;place-content: center;align-items: center;">
+<div fxLayout="column" fxFill>
+    <div fxFlex="15" style="background-color: #673ab7;color:white;place-content: center; align-items: center;display: flex;">
+        <span style="font-weight: bold;text-align: center;"> Question Panel </span>
+    </div>
+
+    <div style="display:flex;flex-wrap: wrap;">
+        <div (click)="renderRefQuestion(questionIndex);" class="qPanelQuestion" *ngFor="let question of questionPanelArr; let questionIndex = index;" [ngClass]="getQuestionState(questionIndex)">
             <span>{{questionIndex+1}}</span>
         </div>
     </div>
-    
-    
 </div>

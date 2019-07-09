@@ -1,9 +1,9 @@
 <div fxLayout="column" fxFill style="overflow:auto;">
-    <div [innerHTML]="currentQuestion.groupData.groupText|safeHtml">
+    <div [innerHTML]="currentQuestion?.groupData?.groupText|safeHtml">
     </div>
-    <div style="margin: 5px;" [innerHTML]="currentQuestion.question.questionText | safeHtml">
+    <div style="margin: 5px;" [innerHTML]="currentQuestion?.question.questionText | safeHtml">
     </div>
     <div style="margin: 5px;">
-        <app-question-options [options]="currentQuestion.options"></app-question-options>
+        <app-question-options [options]="currentQuestion?.options"></app-question-options>
     </div>
 </div>

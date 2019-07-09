@@ -1,21 +1,21 @@
 <div fxLayout="column" fxFlexFill>
     <div fxFlex="7" fxLayout="row" fxLayoutAlign="center center">
-        <mat-toolbar style="width:100%; position: fixed; top:0; z-index:1 ;" color="primary" class="mat-elevation-z6">
+        <mat-toolbar style="width:100%; position: fixed;" color="primary" class="mat-elevation-z6">
             <mat-toolbar-row style="width:100%">
                 <span>Company Placement Test</span>
                 <span class="spacer"></span>
                 <button mat-flat-button matTooltip="Pending Time" color="accent">
-                    07:23
+                   <app-timer (onComplete)="onExamTimeComplete()" [time]="examTime"></app-timer>
                 </button>
-                <button mat-icon-button matTooltip="Navigation Panel" (click)="toggle()">
+                <!-- <button mat-icon-button matTooltip="Navigation Panel" (click)="toggle()">
                     <mat-icon>vertical_split</mat-icon>
                 </button>
                 <button mat-icon-button>
                     <mat-icon>info</mat-icon>
-                </button>
-                <button mat-icon-button [matMenuTriggerFor]="menu">
+                </button> -->
+                <!-- <button mat-icon-button [matMenuTriggerFor]="menu">
                     <mat-icon>account_circle</mat-icon>
-                </button>
+                </button> -->
                 <mat-menu #menu="matMenu">
                     <button mat-menu-item>
                         <mat-icon>bookmark</mat-icon>
@@ -31,7 +31,7 @@
             </mat-toolbar-row>
         </mat-toolbar>
     </div>
-    <div fxFlex="93" fxLayout="row">
+    <div fxFlex="93" fxLayout="row" style="margin-top:8px;">
         <div [fxFlex]="mainContent" fxLayout="column">
             <div fxFlex="100" fxLayout="row" fxLayoutAlign="start start" fxFill>
                 <mat-tab-group animationDuration="100ms" fxFill style="width:100%;" class="sectionTabs">
@@ -45,13 +45,14 @@
                                     <button mat-raised-button>Clear Response</button>
                                 </div>
                                 <div fxFlex="33" fxLayoutAlign="center center">
-                                    <button mat-raised-button>Mark for Review</button>
+                                    <button mat-raised-button (click)="markQuestionForReview()">Mark for Review</button>
                                 </div>
                                 <div fxFlex="33" fxLayoutAlign="center center">
-                                    <button mat-raised-button color="primary" (click)="saveAndRenderQuestion();"><span
-                                            style="font-weight: bold;">
+                                    <button mat-raised-button color="primary" (click)="onClickSaveNext();">
+                                        <span style="font-weight: bold;">
                                             Save and Next
-                                        </span></button>
+                                        </span>
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -71,18 +72,17 @@
         </div>
         <div fxFlex="22" fxLayout="column" *ngIf="show" id="drawer" style="border-left:1px solid lightgray;">
 
-            <div fxFlex="auto">
+            <div fxFlex="50">
                 <app-question-panel [questionPanelInfo]="questionPanelObj"></app-question-panel>
             </div>
-            <div fxFlex="auto">
+            <div fxFlex="40">
                 <div fxLayout="column">
                     <mat-progress-bar mode="determinate" value="40"></mat-progress-bar>
-
                     <div fxFlex="auto" fxFill>
                         <button mat-stroked-button>#</button> Unattempted<br>
                         <button mat-stroked-button class="accent-stroked" color="accent">#</button> Unanswered<br>
-                        <button mat-stroked-button class="warn-stroked" color="warn">#</button> Unanswered and
-                        Marked<br>
+                        <button mat-stroked-button class="warn-stroked" color="warn">#</button> Unanswered and Marked
+                        <br>
                         <button mat-raised-button color="warn">#</button> Answered and Marked<br>
                         <button mat-raised-button color="primary">#</button> Answered and Locked<br>
                     </div>

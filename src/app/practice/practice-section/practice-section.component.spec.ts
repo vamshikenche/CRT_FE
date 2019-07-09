@@ -19,7 +19,14 @@ describe('PracticeSectionComponent', () => {
     fixture.detectChanges();
   });
 
+
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('Array Length should not be zero', ()=>{ 
+    expect(component.questionArr.length).toEqual(0);
+  });
+
+
 });

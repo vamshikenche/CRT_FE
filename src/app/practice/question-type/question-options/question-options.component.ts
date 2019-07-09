@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 // import {MatCheckboxModule} from '@angular/material/checkbox';
+import { PracticeService } from '../../../services/practice.service';
 @Component({
   selector: 'app-question-options',
   templateUrl: './question-options.component.html',
@@ -12,19 +13,19 @@ export class QuestionOptionsComponent implements OnInit {
 
   // optionResponseState
 
+  constructor(private practiceService: PracticeService) { 
 
-  constructor() { }
+  }
 
   ngOnInit() {
     this.selectedOption = {};
-    console.log(this.options);
   }
   saveQuestionResponse(optionEvent){
-    console.log(optionEvent);
     if(optionEvent.value){
       this.selectedOption = optionEvent.value;
+      console.log(JSON.stringify(this.selectedOption));
+      this.practiceService.setCurrentQuestionResponse(this.selectedOption);
     }
-
   }
 
   clearResponse(){
