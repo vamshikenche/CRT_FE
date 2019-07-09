@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { MCQ } from '../../../modals/question.modals';
+import { PracticeService } from '../../../services/practice.service';
 @Component({
   selector: 'app-question-mcq',
   templateUrl: './question-mcq.component.html',
@@ -9,13 +10,14 @@ export class QuestionMcqComponent implements OnInit {
   @Input() questionObj:any;
   questionsArr = [];
   currentQuestion = {};
-  constructor() { }
-
+  
+  constructor(private practiceService : PracticeService) { }
   ngOnInit() {
-    // this.questionsArr = MCQ;
     this.currentQuestion = this.questionObj;
   }
   ngOnChanges(changes:any){
-    this.currentQuestion = changes.questionObj.currentValue;
+    if(changes.questionObj){
+      this.currentQuestion = changes.questionObj.currentValue;
+    }
   }
 }

@@ -1,9 +1,9 @@
 <div fxFill>
-    <!-- <ng-template [ngIf]="currentQuestionObj.questionType === 1"> -->
-    <app-question-mcq *ngIf="currentQuestionInfo && currentQuestionInfo.questionType === 1" fxFill [questionObj]="currentQuestionInfo"></app-question-mcq>
-    <!-- </ng-template> -->
+    <ng-template [ngIf]="currentQuestionObj?.questionType === 1">
+        <app-question-mcq [questionObj]="currentQuestionInfo" fxFill></app-question-mcq>
+    </ng-template>
 
-    <!-- <ng-template [ngIf]="currentQuestionObj.questionType === 2"> -->
-    <app-question-di-bargraph *ngIf="currentQuestionInfo && currentQuestionInfo?.questionType === 2" fxFill [questionObj]="currentQuestionInfo"></app-question-di-bargraph>
-    <!-- </ng-template> -->
+    <ng-template [ngIf]="currentQuestionObj?.questionType === 2">
+        <app-question-di-bargraph [questionObj]="currentQuestionInfo" fxFill></app-question-di-bargraph>
+    </ng-template>
 </div>

@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule } from './routing/app-routing.module';
 import { AppComponent } from './app.component';
 import { SubjectListComponent } from './subject-list/subject-list.component';
 import { PracticeService } from './services/practice.service';
@@ -16,6 +16,8 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { QuestionPanelComponent } from './practice/question-panel/question-panel.component';
 import { MaterialModule } from './material/material.module';
+import { TimerComponent } from './practice/timer/timer.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +28,8 @@ import { MaterialModule } from './material/material.module';
     QuestionOptionsComponent,
     SafeHtmlPipe,
     QuestionDiBargraphComponent,
-    QuestionPanelComponent
+    QuestionPanelComponent,
+    TimerComponent
   ],
   imports: [
     BrowserModule,
